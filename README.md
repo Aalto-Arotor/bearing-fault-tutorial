@@ -1,4 +1,4 @@
-#E-Rotors hands on tutorial for bearing fault diagnosis using OpenConmo
+# E-Rotors hands on tutorial for bearing fault diagnosis using OpenConmo
 
 Python library for vibration signal based condition monitoring OpenConmo is open source tool available at [OpenConmo](https://github.com/Aalto-Arotor/openConMo)
 
