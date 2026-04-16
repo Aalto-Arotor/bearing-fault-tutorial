@@ -115,4 +115,5 @@ dmypy.json
 *.doit.db
 _output
 
+tutorial_testaus.ipynb
 tutorial_solutions.ipynb

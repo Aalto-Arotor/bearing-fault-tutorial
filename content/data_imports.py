@@ -38,9 +38,34 @@ def import_polito():
     signal = signal1[0,0]["y_values"]["values"][0,0][:,1]
     # print(unit)
     return signal, fs, fr
-    
-    
-    
+
+def import_cwru_133():
+    mat_file = "133.mat"
+    data = scipy.io.loadmat(mat_file) # Loads the .mat file data into a Python variable
+    keys = data.keys() # Gets the keys of the loaded data
+    # print(keys)
+    De_key = next((key for key in keys if "DE" in key), None) # Finds the key that contains "DE"
+    rpm_key = next((key for key in keys if "RPM" in key), None) # Finds the key that contains "rpm"
+    rpm = data[rpm_key].flatten()[0] if rpm_key else None # Extracts the RPM value
+    signal = data[De_key].flatten() if De_key else None # Extracts the signal data
+    fs = 12e3 # Sampling frequency
+    # rpm = 1797 # Rotational speed in RPM
+    fr = rpm / 60 # Rotational frequency in Hz
+    return signal, fs, fr
+
+def import_cwru_200():
+    mat_file = "200.mat"
+    data = scipy.io.loadmat(mat_file) # Loads the .mat file data into a Python variable
+    keys = data.keys() # Gets the keys of the loaded data
+    # print(keys)
+    De_key = next((key for key in keys if "DE" in key), None) # Finds the key that contains "DE"
+    rpm_key = next((key for key in keys if "RPM" in key), None) # Finds the key that contains "rpm"
+    rpm = data[rpm_key].flatten()[0] if rpm_key else None # Extracts the RPM value
+    signal = data[De_key].flatten() if De_key else None # Extracts the signal data
+    fs = 12e3 # Sampling frequency
+    # rpm = 1797 # Rotational speed in RPM
+    fr = rpm / 60 # Rotational frequency in Hz
+    return signal, fs, fr
     
     
 if __name__ == "__main__":
