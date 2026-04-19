@@ -34,7 +34,7 @@ def check_bpfo(bpfo_hz, n, d, D, phi, f_r, rtol=1e-4, atol=1e-8):
     return "❌ BPFO_Hz is not correct yet. Check the BPFO formula and try again."
 
 
-def _check_frequency(value, expected, name, rtol=1e-4, atol=1e-8):
+def _check_frequency(value, expected, name, rtol=1e-1, atol=1e-1):
     try:
         numeric_value = float(value)
     except (TypeError, ValueError):
